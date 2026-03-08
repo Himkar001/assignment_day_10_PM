@@ -1,0 +1,98 @@
+PART C — INTERVIEW READY
+
+Q1 — LEGB Rule
+
+LEGB stands for:
+
+L — Local
+E — Enclosing
+G — Global
+B — Built-in
+
+Python resolves variables in this order when a variable is referenced.
+
+1. Local Scope
+Variables defined inside a function.
+
+2. Enclosing Scope
+Variables in the outer function (used in nested functions).
+
+3. Global Scope
+Variables defined at the module level.
+
+4. Built-in Scope
+Python’s built-in names like len(), print(), etc.
+
+
+Example:
+
+x = "global"
+
+def outer():
+
+    x = "enclosing"
+
+    def inner():
+        x = "local"
+        print(x)
+
+    inner()
+
+outer()
+
+Output:
+local
+
+
+If a variable exists in both local and global scope, Python uses the local one.
+
+
+Global Keyword
+
+The global keyword allows a function to modify a global variable.
+
+Example:
+
+count = 0
+
+def increment():
+    global count
+    count += 1
+
+
+Why is global considered a code smell?
+
+• Makes code harder to maintain
+• Introduces hidden dependencies
+• Breaks modular design
+
+Better Alternative
+
+Pass variables as parameters and return results instead of modifying global variables.
+
+Q2 — Memoization
+
+Memoization stores results of expensive function calls in a cache.
+If the function is called again with the same arguments, the cached result is returned.
+
+Benefits:
+• Faster performance
+• Avoids repeated computation
+
+
+Q3 — Bug Fix Explanation
+
+Bug 1 — Mutable Default Argument
+
+cart=[] was shared across function calls.
+
+Fix:
+Use cart=None and create a new list inside the function.
+
+
+Bug 2 — Scope Issue
+
+total was modified inside the function without declaring it global.
+
+Fix:
+Use global total so the function updates the global variable.
