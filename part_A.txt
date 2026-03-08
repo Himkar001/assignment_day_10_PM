@@ -1,0 +1,57 @@
+PART A — STUDENT PERFORMANCE ANALYTICS RESULTS
+
+Sample Students Created:
+
+1.
+Name: Amit
+Roll: R001
+Marks: {math: 85, python: 92, ml: 78}
+
+2.
+Name: Priya
+Roll: R002
+Marks: {math: 95, python: 88, ml: 91}
+
+
+GPA Calculation
+
+calculate_gpa(85, 92, 78)
+
+Average Marks = 85
+GPA = 8.5
+
+
+Top Performer in Python
+
+get_top_performers(students, n=1, subject='python')
+
+Result:
+Amit scored 92 in Python
+
+
+Student Report
+
+generate_report(Amit)
+
+Student: Amit (R001)
+Average: 85
+Grade: B
+
+
+Student Classification
+
+classify_students(students)
+
+A Grade:
+Priya
+
+B Grade:
+Amit
+
+
+Test Execution
+
+Running test_analytics.py
+
+Output:
+All tests passed successfully

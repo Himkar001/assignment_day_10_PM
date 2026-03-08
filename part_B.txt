@@ -1,0 +1,58 @@
+PART B — DECORATORS IMPLEMENTATION
+
+Decorator 1 — Timer
+
+Measures execution time of a function.
+
+Example Output:
+
+slow_function executed in 1.00 seconds
+Finished
+
+
+Decorator 2 — Logger
+
+Logs function name, arguments and return value.
+
+Example Output:
+
+Calling function: add
+Arguments: (5,3)
+Returned: 8
+
+
+Decorator 3 — Retry
+
+Retries a function if it raises an exception.
+
+Example Output:
+
+Attempt 1 failed
+Attempt 2 failed
+Success
+
+
+Concepts Used
+
+Closures
+Higher order functions
+*args and **kwargs
+functools.wraps
+Exception handling
+
+ output after running script:
+
+PS C:\Users\himkar vashistha\Desktop\assignment_10_pm> python decorators.py
+
+--- TIMER TEST ---
+[TIMER] slow_function executed in 1.0139 seconds
+Task Completed
+
+--- LOGGER TEST ---
+[LOGGER] Calling function: add_numbers
+[LOGGER] Arguments: args=(5, 3), kwargs={}
+[LOGGER] Returned: 8
+8
+
+--- RETRY TEST ---
+Success
