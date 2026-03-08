@@ -496,3 +496,137 @@ part_C.txt
 ```
 
 These files demonstrate memoization, debugging fixes, and conceptual explanations.
+## Part D — AI-Augmented Task
+
+### Objective
+
+This section demonstrates how AI tools can assist in generating code and how developers should critically evaluate and improve AI-generated solutions.
+
+The task required prompting an AI system to generate a Python module that analyzes text using optional features controlled through keyword arguments.
+
+---
+
+### Prompt Used
+
+```
+Write a Python module with a function called analyze_text(text: str, **options)
+that accepts text and keyword arguments for options such as:
+
+- count_words
+- count_sentences
+- find_longest_word
+- sentiment_simple
+
+Each option should enable a different analysis.  
+Use *args and **kwargs, add type hints and Google-style docstrings,  
+and return a dictionary containing the requested analyses.
+```
+
+---
+
+### AI Generated Function Overview
+
+The AI-generated function performs multiple analyses on text:
+
+* Word counting
+* Sentence counting
+* Longest word detection
+* Basic sentiment analysis
+
+The function returns the results in a dictionary.
+
+Example usage:
+
+```python
+analyze_text("Python is great. I love machine learning!")
+```
+
+Example output:
+
+```
+{
+ 'word_count': 7,
+ 'sentence_count': 2,
+ 'longest_word': 'learning!',
+ 'sentiment': 'positive'
+}
+```
+
+---
+
+### Evaluation of AI Generated Code
+
+#### Use of `**kwargs`
+
+The function correctly uses `**kwargs` to allow flexible enabling or disabling of different analysis options.
+
+Example:
+
+```python
+analyze_text(text, count_words=True, sentiment_simple=False)
+```
+
+---
+
+#### Type Hints
+
+Type hints are correctly used for input parameters and return types, improving readability and maintainability.
+
+Example:
+
+```python
+def analyze_text(text: str, **options) -> dict
+```
+
+---
+
+#### Edge Case Handling
+
+The improved version handles potential issues such as:
+
+* Empty text input
+* Missing options
+* Safe text splitting
+
+---
+
+#### Docstring Quality
+
+The docstrings describe:
+
+* Function purpose
+* Parameters
+* Expected output
+
+This improves usability and code documentation.
+
+---
+
+### Improvements Made
+
+The AI initially produced a single large function.
+To improve code quality, the implementation was refactored into smaller helper functions:
+
+* `count_words()`
+* `count_sentences()`
+* `find_longest_word()`
+* `simple_sentiment()`
+
+Benefits of this approach:
+
+* Better modular design
+* Easier testing
+* Improved readability
+* Clear separation of responsibilities
+
+---
+
+### Files Related to Part D
+
+```
+ai_text_analysis.py
+part_D.txt
+```
+
+* **ai_text_analysis.py** contains the improved text analysis module.
+* **part_D.txt** contains the prompt used and evaluation of the AI-generated code.

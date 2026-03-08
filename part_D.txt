@@ -1,0 +1,51 @@
+PART D — AI AUGMENTED TASK
+
+
+Prompt Used
+
+"Write a Python module with a function called analyze_text(text: str, **options)
+that accepts text and optional keyword arguments for analysis features such as
+word count, sentence count, longest word detection, and simple sentiment analysis.
+Include type hints and docstrings and return results in a dictionary."
+
+
+AI Generated Code Evaluation
+
+1. Use of **kwargs
+
+Yes, the function properly uses **kwargs to enable or disable specific analyses.
+
+
+2. Type Hints
+
+Type hints are included for function parameters and return values.
+
+
+3. Edge Case Handling
+
+The improved version handles empty text input and prevents errors.
+
+
+4. Docstring Quality
+
+Docstrings explain function purpose and parameters clearly.
+
+
+5. Single Responsibility Principle
+
+The AI initially produced a large monolithic function.
+The improved version separates responsibilities into smaller helper functions:
+
+count_words()
+count_sentences()
+find_longest_word()
+simple_sentiment()
+
+
+Benefits of Improvement
+
+• Cleaner design
+• Better modularity
+• Easier testing
+• Improved readability
+
